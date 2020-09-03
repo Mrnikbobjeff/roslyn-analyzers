@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft.  All Rights Reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
 
 using System.Collections.Immutable;
+using System.Linq;
 using Analyzer.Utilities;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
@@ -39,17 +40,39 @@ namespace Microsoft.NetCore.Analyzers.InteropServices
                                                                              isDataflowRule: false,
                                                                              isEnabledByDefaultInFxCopAnalyzers: false);
 
-        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray<DiagnosticDescriptor>.Empty;
-        //ImmutableArray.Create(DefaultRule, ReturnRule);
+        public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(DefaultRule, ReturnRule);
 
-#pragma warning disable RS1025 // Configure generated code analysis
         public override void Initialize(AnalysisContext analysisContext)
-#pragma warning restore RS1025 // Configure generated code analysis
         {
             analysisContext.EnableConcurrentExecution();
+            analysisContext.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.None);
+            analysisContext.RegisterSymbolAction(FindBooleanParameters, SymbolKind.Method);
+        }
+        private static bool IsMarshalAsAttribute(AttributeData att)
+        {
+            return att.AttributeClass.Name.Equals("MarshalAsAttribute", System.StringComparison.Ordinal);
+        }
 
-            // TODO: Configure generated code analysis.
-            //analysisContext.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.None);
+        private void FindBooleanParameters(SymbolAnalysisContext context)
+        {
+            var methodSymbol = (IMethodSymbol)context.Symbol;
+
+            if (methodSymbol.IsExtern)
+            {
+                if (methodSymbol.Parameters.Any(p => p.Type.SpecialType == SpecialType.System_Boolean
+                     && !p.GetAttributes().Any(att => IsMarshalAsAttribute(att))))
+                {
+                    var diagnostic = Diagnostic.Create(DefaultRule, methodSymbol.Locations[0], methodSymbol);
+
+                    context.ReportDiagnostic(diagnostic);
+                }
+                if (methodSymbol.ReturnType.SpecialType == SpecialType.System_Boolean && !methodSymbol.ReturnType.GetAttributes().Any(att => IsMarshalAsAttribute(att)))
+                {
+                    var diagnostic = Diagnostic.Create(ReturnRule, methodSymbol.Locations[0], methodSymbol);
+
+                    context.ReportDiagnostic(diagnostic);
+                }
+            }
         }
     }
 }
