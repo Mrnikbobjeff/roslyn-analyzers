@@ -103,6 +103,9 @@ namespace Analyzer.Utilities
         public const string SystemCollectionsConcurrentConcurrentQueue1 = "System.Collections.Concurrent.ConcurrentQueue`1";
         public const string SystemCollectionsConcurrentConcurrentStack1 = "System.Collections.Concurrent.ConcurrentStack`1";
         public const string SystemCollectionsGenericICollection1 = "System.Collections.Generic.ICollection`1";
+        public const string SystemCollectionsGenericIDictionary2 = "System.Collections.Generic.IDictionary`2";
+        public const string SystemCollectionsGenericIReadOnlyDictionary2 = "System.Collections.Generic.IReadOnlyDictionary`2";
+        public const string SystemCollectionsGenericDictionary2 = "System.Collections.Generic.Dictionary`2";
         public const string SystemCollectionsGenericIEnumerable1 = "System.Collections.Generic.IEnumerable`1";
         public const string SystemCollectionsGenericIEnumerator1 = "System.Collections.Generic.IEnumerator`1";
         public const string SystemCollectionsGenericIEqualityComparer1 = "System.Collections.Generic.IEqualityComparer`1";

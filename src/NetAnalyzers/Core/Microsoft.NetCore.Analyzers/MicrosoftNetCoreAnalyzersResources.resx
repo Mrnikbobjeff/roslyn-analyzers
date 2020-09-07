@@ -1482,4 +1482,19 @@
   <data name="PreferStringContainsOverIndexOfCodeFixTitle" xml:space="preserve">
     <value>Replace with 'string.Contains'</value>
   </data>
+  <data name="PreferContainsKeyOrValueOverPropertyAccessTitle" xml:space="preserve">
+    <value>Invocation on dictionary type can be simplified</value>
+  </data>
+  <data name="PreferContainsKeyOverPropertyAccessMessage" xml:space="preserve">
+    <value>'IDictionary&lt;,&gt;' offers a ContainsKey method which should be preferred instead of accessing the 'Keys' property and calling 'Contains' on that</value>
+  </data>
+  <data name="PreferContainsKeyOverPropertyDescription" xml:space="preserve">
+    <value>'ContainsKey' does not incur the same overhead as calling the LINQ 'Contains' method on the 'Keys' collection.</value>
+  </data>
+  <data name="PreferContainsValueOverPropertyAccessMessage" xml:space="preserve">
+    <value>'Dictionary&lt;,&gt;' offers a ContainsValue method which should be preferred instead of accessing the 'Values' property and calling 'Contains' on that</value>
+  </data>
+  <data name="PreferContainsValueOverPropertyDescription" xml:space="preserve">
+    <value>'ContainsValue' does not incur the same overhead as calling the LINQ 'Contains' method on the 'Values' collection.</value>
+  </data>
 </root>
