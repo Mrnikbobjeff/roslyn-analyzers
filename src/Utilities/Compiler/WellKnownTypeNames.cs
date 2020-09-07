@@ -71,8 +71,10 @@ namespace Analyzer.Utilities
         public const string MicrosoftVisualStudioTestToolsUnitTestingTestMethodAttribute = "Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute";
         public const string MicrosoftWindowsAzureStorageCloudStorageAccount = "Microsoft.WindowsAzure.Storage.CloudStorageAccount";
         public const string MicrosoftWindowsAzureStorageSharedAccessProtocol = "Microsoft.WindowsAzure.Storage.SharedAccessProtocol";
+        public const string NewtonsoftJsonJsonConstructorAttribute = "Newtonsoft.Json.JsonConstructorAttribute";
         public const string NewtonsoftJsonJsonConvert = "Newtonsoft.Json.JsonConvert";
         public const string NewtonsoftJsonJsonIgnoreAttribute = "Newtonsoft.Json.JsonIgnoreAttribute";
+        public const string NewtonsoftJsonJsonPropertyAttribute = "Newtonsoft.Json.JsonPropertyAttribute";
         public const string NewtonsoftJsonJsonSerializer = "Newtonsoft.Json.JsonSerializer";
         public const string NewtonsoftJsonJsonSerializerSettings = "Newtonsoft.Json.JsonSerializerSettings";
         public const string NewtonsoftJsonTypeNameHandling = "Newtonsoft.Json.TypeNameHandling";

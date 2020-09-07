@@ -1222,6 +1222,21 @@
         <target state="translated">Не выполняйте десериализацию в JavaScriptSerializer с помощью SimpleTypeResolver</target>
         <note />
       </trans-unit>
+      <trans-unit id="JsonConstructorParametersShouldMatchPropertyDescription">
+        <source>Constructs marked with JsonConstructorAttribute should have parameter names matching properties on that type, and '{0}' violates that rule.</source>
+        <target state="new">Constructs marked with JsonConstructorAttribute should have parameter names matching properties on that type, and '{0}' violates that rule.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="JsonConstructorParametersShouldMatchPropertyMessage">
+        <source>Constructs marked with JsonConstructorAttribute should have parameter names matching properties on that type, and '{0}' violates that rule. Either rename the parameter or add the JsonProperty attribute to the parameter.</source>
+        <target state="new">Constructs marked with JsonConstructorAttribute should have parameter names matching properties on that type, and '{0}' violates that rule. Either rename the parameter or add the JsonProperty attribute to the parameter.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="JsonConstructorParametersShouldMatchPropertyTitle">
+        <source>Constructs marked with JsonConstructorAttribute should have parameter names matching properties on that type</source>
+        <target state="new">Constructs marked with JsonConstructorAttribute should have parameter names matching properties on that type</target>
+        <note />
+      </trans-unit>
       <trans-unit id="JsonNetInsecureSerializerMessage">
         <source>When deserializing untrusted input, allowing arbitrary types to be deserialized is insecure. When using deserializing JsonSerializer, use TypeNameHandling.None, or for values other than None, restrict deserialized types with a SerializationBinder.</source>
         <target state="translated">При десериализации ненадежных входных данных разрешать десериализацию произвольных типов небезопасно. При использовании десериализации JsonSerializer укажите TypeNameHandling.None, а для значений, отличных от None, ограничьте десериализованные типы с помощью SerializationBinder.</target>

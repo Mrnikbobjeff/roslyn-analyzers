@@ -1222,6 +1222,21 @@
         <target state="translated">请勿通过使用 SimpleTypeResolver 的 JavaScriptSerializer 进行反序列化</target>
         <note />
       </trans-unit>
+      <trans-unit id="JsonConstructorParametersShouldMatchPropertyDescription">
+        <source>Constructs marked with JsonConstructorAttribute should have parameter names matching properties on that type, and '{0}' violates that rule.</source>
+        <target state="new">Constructs marked with JsonConstructorAttribute should have parameter names matching properties on that type, and '{0}' violates that rule.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="JsonConstructorParametersShouldMatchPropertyMessage">
+        <source>Constructs marked with JsonConstructorAttribute should have parameter names matching properties on that type, and '{0}' violates that rule. Either rename the parameter or add the JsonProperty attribute to the parameter.</source>
+        <target state="new">Constructs marked with JsonConstructorAttribute should have parameter names matching properties on that type, and '{0}' violates that rule. Either rename the parameter or add the JsonProperty attribute to the parameter.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="JsonConstructorParametersShouldMatchPropertyTitle">
+        <source>Constructs marked with JsonConstructorAttribute should have parameter names matching properties on that type</source>
+        <target state="new">Constructs marked with JsonConstructorAttribute should have parameter names matching properties on that type</target>
+        <note />
+      </trans-unit>
       <trans-unit id="JsonNetInsecureSerializerMessage">
         <source>When deserializing untrusted input, allowing arbitrary types to be deserialized is insecure. When using deserializing JsonSerializer, use TypeNameHandling.None, or for values other than None, restrict deserialized types with a SerializationBinder.</source>
         <target state="translated">对不信任的输入进行反序列化时，允许反序列化任意类型这一行为是不安全的。使用反序列化 JsonSerializer 时，请使用 TypeNameHandling.None；对于“无”以外的值，请使用 SerializationBinder 限制反序列化的类型。</target>

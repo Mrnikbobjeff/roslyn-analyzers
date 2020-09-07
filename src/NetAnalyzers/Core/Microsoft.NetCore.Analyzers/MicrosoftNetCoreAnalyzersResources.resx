@@ -1479,4 +1479,13 @@
   <data name="PlatformCompatibilityCheckSupportedOsMessage" xml:space="preserve">
     <value>'{0}' is supported on '{1}'</value>
   </data>
+  <data name="JsonConstructorParametersShouldMatchPropertyDescription" xml:space="preserve">
+    <value>Constructs marked with JsonConstructorAttribute should have parameter names matching properties on that type, and '{0}' violates that rule.</value>
+  </data>
+  <data name="JsonConstructorParametersShouldMatchPropertyMessage" xml:space="preserve">
+    <value>Constructs marked with JsonConstructorAttribute should have parameter names matching properties on that type, and '{0}' violates that rule. Either rename the parameter or add the JsonProperty attribute to the parameter.</value>
+  </data>
+  <data name="JsonConstructorParametersShouldMatchPropertyTitle" xml:space="preserve">
+    <value>Constructs marked with JsonConstructorAttribute should have parameter names matching properties on that type</value>
+  </data>
 </root>
