@@ -29,6 +29,7 @@ namespace Microsoft.NetCore.Analyzers.Performance
             {
                 return;
             }
+
             if (possibleValueOrKeysMemberAccess.Name.Identifier.ValueText.Equals("Keys", System.StringComparison.Ordinal))
             {
                 var identifier = SyntaxFactory.IdentifierName(@"ContainsKey");

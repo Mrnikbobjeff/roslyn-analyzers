@@ -8,6 +8,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
+
 namespace Microsoft.NetCore.Analyzers.Performance
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
@@ -99,6 +100,7 @@ namespace Microsoft.NetCore.Analyzers.Performance
                 {
                     diagnostic = Diagnostic.Create(ContainsKeyRule, invocation.GetLocation());
                 }
+
                 context.ReportDiagnostic(diagnostic);
             }
         }

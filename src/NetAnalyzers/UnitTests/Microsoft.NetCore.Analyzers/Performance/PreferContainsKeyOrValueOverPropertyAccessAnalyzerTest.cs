@@ -114,6 +114,15 @@ public class C
 {
     public bool Test() => new List<int>().Contains(1);
 }");
+            await VerifyCS.VerifyAnalyzerAsync(@"
+using System.Collections.Generic;
+
+public static class C
+{
+    public static Dictionary<int,int> dictionary {get;set;} = new Dictionary<int,int>();
+    public static bool Contains(this Dictionary<int, int> dict, int key, int value) => dict.ContainsKey(key) && dict.ContainsValue(value);
+    public static bool Test() => new Dictionary<int,int>().Contains(1,1);
+}");
         }
     }
 }
