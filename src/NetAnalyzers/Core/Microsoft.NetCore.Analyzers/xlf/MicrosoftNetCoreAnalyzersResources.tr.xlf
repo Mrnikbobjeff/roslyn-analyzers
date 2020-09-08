@@ -1557,6 +1557,31 @@
         <target state="translated">Seri durumdan çıkarılan nesne grafındaki olası başvuru döngüsü</target>
         <note />
       </trans-unit>
+      <trans-unit id="PreferContainsKeyOrValueOverPropertyAccessTitle">
+        <source>Invocation on dictionary type can be simplified</source>
+        <target state="new">Invocation on dictionary type can be simplified</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="PreferContainsKeyOverPropertyAccessMessage">
+        <source>'IDictionary&lt;,&gt;' offers a ContainsKey method which should be preferred instead of accessing the 'Keys' property and calling 'Contains' on that</source>
+        <target state="new">'IDictionary&lt;,&gt;' offers a ContainsKey method which should be preferred instead of accessing the 'Keys' property and calling 'Contains' on that</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="PreferContainsKeyOverPropertyDescription">
+        <source>'ContainsKey' does not incur the same overhead as calling the LINQ 'Contains' method on the 'Keys' collection.</source>
+        <target state="new">'ContainsKey' does not incur the same overhead as calling the LINQ 'Contains' method on the 'Keys' collection.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="PreferContainsValueOverPropertyAccessMessage">
+        <source>'Dictionary&lt;,&gt;' offers a ContainsValue method which should be preferred instead of accessing the 'Values' property and calling 'Contains' on that</source>
+        <target state="new">'Dictionary&lt;,&gt;' offers a ContainsValue method which should be preferred instead of accessing the 'Values' property and calling 'Contains' on that</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="PreferContainsValueOverPropertyDescription">
+        <source>'ContainsValue' does not incur the same overhead as calling the LINQ 'Contains' method on the 'Values' collection.</source>
+        <target state="new">'ContainsValue' does not incur the same overhead as calling the LINQ 'Contains' method on the 'Values' collection.</target>
+        <note />
+      </trans-unit>
       <trans-unit id="PreferStreamAsyncMemoryOverloadsDescription">
         <source>'Stream' has a 'ReadAsync' overload that takes a 'Memory&lt;Byte&gt;' as the first argument, and a 'WriteAsync' overload that takes a 'ReadOnlyMemory&lt;Byte&gt;' as the first argument. Prefer calling the memory based overloads, which are more efficient.</source>
         <target state="translated">'Stream', ilk bağımsız değişken olarak 'Memory&lt;Byte&gt;' alan bir 'ReadAsync' aşırı yüklemesine ve ilk bağımsız değişken olarak 'ReadOnlyMemory&lt;Byte&gt;' alan bir 'WriteAsync' aşırı yüklemesine sahip. Daha verimli olan bellek tabanlı aşırı yüklemeleri çağırmayı tercih edin.</target>

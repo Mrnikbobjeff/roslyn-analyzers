@@ -79,25 +79,25 @@ namespace Microsoft.NetCore.Analyzers.Performance
             }
 
             if (!context.Compilation.TryGetOrCreateTypeByMetadataName(WellKnownTypeNames.SystemCollectionsGenericIReadOnlyDictionary2, out var iReadOnlyDictionary)
-                || !context.Compilation.TryGetOrCreateTypeByMetadataName(WellKnownTypeNames.SystemCollectionsGenericIReadOnlyDictionary2, out var iDictionary)
+                || !context.Compilation.TryGetOrCreateTypeByMetadataName(WellKnownTypeNames.SystemCollectionsGenericIDictionary2, out var iDictionary)
                 || !context.Compilation.TryGetOrCreateTypeByMetadataName(WellKnownTypeNames.SystemCollectionsGenericDictionary2, out var dictionary))
             {
                 return;
             }
 
-            if (typeMemberAccess.AllInterfaces.Any(@interface => (@interface.Equals(iDictionary) || @interface.Equals(iReadOnlyDictionary)) && @interface.Arity == 2)
-                || typeMemberAccess is INamedTypeSymbol namedType && namedType.Arity == 2 && (typeMemberAccess.Equals(iReadOnlyDictionary) || typeMemberAccess.Name.Equals(iDictionary)))
+            if (typeMemberAccess.AllInterfaces.Any(@interface => (@interface.ConstructedFrom.Equals(iDictionary) || @interface.ConstructedFrom.Equals(iReadOnlyDictionary)) && @interface.Arity == 2)
+                || typeMemberAccess is INamedTypeSymbol namedType && namedType.Arity == 2 && (namedType.ConstructedFrom.Equals(iReadOnlyDictionary) || namedType.ConstructedFrom.Equals(iDictionary)))
             {
                 Diagnostic? diagnostic = null;
                 if (possibleValueOrKeysMemberAccess.Name.Identifier.ValueText.Equals("Values", System.StringComparison.Ordinal))
                 {
-                    if (!typeMemberAccess.Equals(dictionary))
+                    if (!typeMemberAccess.OriginalDefinition.Equals(dictionary))
                         return; //ContainsValue is only available on Dictionary<'> type
                     diagnostic = Diagnostic.Create(ContainsValueRule, invocation.GetLocation());
                 }
                 else
                 {
-                    Diagnostic.Create(ContainsKeyRule, invocation.GetLocation());
+                    diagnostic = Diagnostic.Create(ContainsKeyRule, invocation.GetLocation());
                 }
                 context.ReportDiagnostic(diagnostic);
             }
