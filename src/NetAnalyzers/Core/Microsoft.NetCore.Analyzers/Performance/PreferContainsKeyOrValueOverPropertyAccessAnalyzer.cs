@@ -100,11 +100,11 @@ namespace Microsoft.NetCore.Analyzers.Performance
                         return; //ContainsValue is only available on Dictionary<'> type
                     }
 
-                    diagnostic = Diagnostic.Create(ContainsValueRule, invocation.GetLocation());
+                    diagnostic = invocation.CreateDiagnostic(ContainsValueRule);
                 }
                 else
                 {
-                    diagnostic = Diagnostic.Create(ContainsKeyRule, invocation.GetLocation());
+                    diagnostic = invocation.CreateDiagnostic(ContainsKeyRule, invocation);
                 }
 
                 context.ReportDiagnostic(diagnostic);
