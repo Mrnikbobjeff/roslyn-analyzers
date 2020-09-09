@@ -1559,13 +1559,13 @@
         <note />
       </trans-unit>
       <trans-unit id="PreferContainsKeyOrValueOverPropertyAccessTitle">
-        <source>Invocation on dictionary type can be simplified</source>
-        <target state="new">Invocation on dictionary type can be simplified</target>
+        <source>Invocation on Dictionary can be simplified</source>
+        <target state="new">Invocation on Dictionary can be simplified</target>
         <note />
       </trans-unit>
       <trans-unit id="PreferContainsKeyOverPropertyAccessMessage">
-        <source>'IDictionary&lt;,&gt;' offers a ContainsKey method which should be preferred instead of accessing the 'Keys' property and calling 'Contains' on that</source>
-        <target state="new">'IDictionary&lt;,&gt;' offers a ContainsKey method which should be preferred instead of accessing the 'Keys' property and calling 'Contains' on that</target>
+        <source>'IDictionary&lt;,&gt;' offers a 'ContainsKey' method which should be preferred instead of accessing the 'Keys' property and calling 'Contains' on that</source>
+        <target state="new">'IDictionary&lt;,&gt;' offers a 'ContainsKey' method which should be preferred instead of accessing the 'Keys' property and calling 'Contains' on that</target>
         <note />
       </trans-unit>
       <trans-unit id="PreferContainsKeyOverPropertyDescription">
@@ -1574,8 +1574,8 @@
         <note />
       </trans-unit>
       <trans-unit id="PreferContainsValueOverPropertyAccessMessage">
-        <source>'Dictionary&lt;,&gt;' offers a ContainsValue method which should be preferred instead of accessing the 'Values' property and calling 'Contains' on that</source>
-        <target state="new">'Dictionary&lt;,&gt;' offers a ContainsValue method which should be preferred instead of accessing the 'Values' property and calling 'Contains' on that</target>
+        <source>'Dictionary&lt;,&gt;' offers a 'ContainsValue' method which should be preferred instead of accessing the 'Values' property and calling 'Contains' on that</source>
+        <target state="new">'Dictionary&lt;,&gt;' offers a 'ContainsValue' method which should be preferred instead of accessing the 'Values' property and calling 'Contains' on that</target>
         <note />
       </trans-unit>
       <trans-unit id="PreferContainsValueOverPropertyDescription">

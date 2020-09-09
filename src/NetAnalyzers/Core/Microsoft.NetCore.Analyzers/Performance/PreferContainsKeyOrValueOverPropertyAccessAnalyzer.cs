@@ -50,10 +50,19 @@ namespace Microsoft.NetCore.Analyzers.Performance
         {
             context.EnableConcurrentExecution();
             context.ConfigureGeneratedCodeAnalysis(GeneratedCodeAnalysisFlags.Analyze | GeneratedCodeAnalysisFlags.ReportDiagnostics);
-            context.RegisterSyntaxNodeAction(AnalyzeInvocation, SyntaxKind.InvocationExpression);
+            context.RegisterCompilationStartAction(ctx =>
+            {
+                if (!ctx.Compilation.TryGetOrCreateTypeByMetadataName(WellKnownTypeNames.SystemCollectionsGenericIReadOnlyDictionary2, out var iReadOnlyDictionary)
+                    || !ctx.Compilation.TryGetOrCreateTypeByMetadataName(WellKnownTypeNames.SystemCollectionsGenericIDictionary2, out var iDictionary)
+                    || !ctx.Compilation.TryGetOrCreateTypeByMetadataName(WellKnownTypeNames.SystemCollectionsGenericDictionary2, out var dictionary))
+                {
+                    return;
+                }
+                ctx.RegisterSyntaxNodeAction(x => AnalyzeInvocation(x, dictionary, iDictionary, iReadOnlyDictionary), SyntaxKind.InvocationExpression);
+            });
         }
 
-        private static void AnalyzeInvocation(SyntaxNodeAnalysisContext context)
+        private static void AnalyzeInvocation(SyntaxNodeAnalysisContext context, INamedTypeSymbol dictionary, INamedTypeSymbol iDictionary, INamedTypeSymbol iReadOnlyDictionary)
         {
             var invocation = (InvocationExpressionSyntax)context.Node;
 
@@ -79,13 +88,7 @@ namespace Microsoft.NetCore.Analyzers.Performance
                 return;
             }
 
-            if (!context.Compilation.TryGetOrCreateTypeByMetadataName(WellKnownTypeNames.SystemCollectionsGenericIReadOnlyDictionary2, out var iReadOnlyDictionary)
-                || !context.Compilation.TryGetOrCreateTypeByMetadataName(WellKnownTypeNames.SystemCollectionsGenericIDictionary2, out var iDictionary)
-                || !context.Compilation.TryGetOrCreateTypeByMetadataName(WellKnownTypeNames.SystemCollectionsGenericDictionary2, out var dictionary))
-            {
-                return;
-            }
-
+            // Perform actual method checking and not just compare strings.
             if (typeMemberAccess.AllInterfaces.Any(@interface => (@interface.ConstructedFrom.Equals(iDictionary) || @interface.ConstructedFrom.Equals(iReadOnlyDictionary)) && @interface.Arity == 2)
                 || typeMemberAccess is INamedTypeSymbol namedType && namedType.Arity == 2 && (namedType.ConstructedFrom.Equals(iReadOnlyDictionary) || namedType.ConstructedFrom.Equals(iDictionary)))
             {
