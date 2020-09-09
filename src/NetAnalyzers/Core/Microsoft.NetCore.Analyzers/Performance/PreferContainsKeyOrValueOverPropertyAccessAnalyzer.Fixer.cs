@@ -34,7 +34,7 @@ namespace Microsoft.NetCore.Analyzers.Performance
             {
                 var identifier = SyntaxFactory.IdentifierName(@"ContainsKey");
                 context.RegisterCodeFix(
-                    new MyCodeAction(
+                    new UseSpecializedContainsChangeAction(
                         title: PreferContainsKeyOrValueOverPropertyAccessAnalyzer.ContainsKeyRuleId,
                         createChangedDocument: c => ReplaceWithSpecializedContainsKey(context.Document, node, possibleValueOrKeysMemberAccess, identifier, c),
                         equivalenceKey: PreferContainsKeyOrValueOverPropertyAccessAnalyzer.ContainsKeyRuleId), context.Diagnostics);
@@ -43,7 +43,7 @@ namespace Microsoft.NetCore.Analyzers.Performance
             {
                 var identifier = SyntaxFactory.IdentifierName(@"ContainsValue");
                 context.RegisterCodeFix(
-                    new MyCodeAction(
+                    new UseSpecializedContainsChangeAction(
                         title: PreferContainsKeyOrValueOverPropertyAccessAnalyzer.ContainsKeyRuleId,
                         createChangedDocument: c => ReplaceWithSpecializedContainsKey(context.Document, node, possibleValueOrKeysMemberAccess, identifier, c),
                         equivalenceKey: PreferContainsKeyOrValueOverPropertyAccessAnalyzer.ContainsKeyRuleId), context.Diagnostics);
@@ -72,9 +72,9 @@ namespace Microsoft.NetCore.Analyzers.Performance
             return WellKnownFixAllProviders.BatchFixer;
         }
 
-        private class MyCodeAction : DocumentChangeAction
+        private class UseSpecializedContainsChangeAction : DocumentChangeAction
         {
-            public MyCodeAction(string title, Func<CancellationToken, Task<Document>> createChangedDocument, string equivalenceKey)
+            public UseSpecializedContainsChangeAction(string title, Func<CancellationToken, Task<Document>> createChangedDocument, string equivalenceKey)
                 : base(title, createChangedDocument, equivalenceKey)
             {
             }

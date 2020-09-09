@@ -93,7 +93,10 @@ namespace Microsoft.NetCore.Analyzers.Performance
                 if (possibleValueOrKeysMemberAccess.Name.Identifier.ValueText.Equals("Values", System.StringComparison.Ordinal))
                 {
                     if (!typeMemberAccess.OriginalDefinition.Equals(dictionary))
+                    {
                         return; //ContainsValue is only available on Dictionary<'> type
+                    }
+
                     diagnostic = Diagnostic.Create(ContainsValueRule, invocation.GetLocation());
                 }
                 else
