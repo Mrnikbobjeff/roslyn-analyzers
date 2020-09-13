@@ -84,7 +84,7 @@ public class C
     {
         var byteArray = new byte[1];
         var byteArrayDest = new byte[1];
-        Buffer.BlockCopy(intArray, 0, byteArrayDest, 0, byteArray.Length);
+        Buffer.BlockCopy(byteArray, 0, byteArrayDest, 0, byteArray.Length);
     }
 }");
         }
