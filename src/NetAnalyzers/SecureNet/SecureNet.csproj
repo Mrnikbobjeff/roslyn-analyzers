@@ -18,6 +18,7 @@
     <InternalsVisibleTo Include="Microsoft.CodeAnalysis.CSharp.NetAnalyzers" />
     <InternalsVisibleTo Include="Microsoft.CodeAnalysis.VisualBasic.NetAnalyzers" />
     <InternalsVisibleTo Include="Microsoft.CodeAnalysis.NetAnalyzers.UnitTests" />
+    <InternalsVisibleTo Include="SecureNet.Tests" />
     <InternalsVisibleTo Include="Analyzer.Utilities.UnitTests" />
   </ItemGroup>
   <ItemGroup>

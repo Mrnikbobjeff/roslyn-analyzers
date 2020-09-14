@@ -20,23 +20,29 @@ namespace SecureNet.Category.Performance
         private const string ReadAsync = nameof(ReadAsync);
         private const string WriteAsync = nameof(WriteAsync);
 
+        internal static readonly LocalizableString localizableTitle = new LocalizableResourceString(nameof(AnalyzerResources.DetectPLINQNopsTitle), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+        private static readonly LocalizableString s_localizableMessageRead = new LocalizableResourceString(nameof(AnalyzerResources.DetectPLINQNopsMessage), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+        private static readonly LocalizableString s_localizableDescriptionRead = new LocalizableResourceString(nameof(AnalyzerResources.DetectPLINQNopsDescription), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+        private static readonly LocalizableString s_localizableMessageWrite = new LocalizableResourceString(nameof(AnalyzerResources.DetectPLINQNopsMessage), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+        private static readonly LocalizableString s_localizableDescriptionWrite = new LocalizableResourceString(nameof(AnalyzerResources.DetectPLINQNopsDescription), AnalyzerResources.ResourceManager, typeof(AnalyzerResources));
+
         internal static readonly DiagnosticDescriptor ReadRule = DiagnosticDescriptorHelper.Create(
             ReadRuleId,
-            "",
-            "",
+            localizableTitle,
+            s_localizableMessageRead,
             DiagnosticCategory.Performance,
             RuleLevel.IdeSuggestion,
-            description: "",
+            description: s_localizableDescriptionRead,
             isPortedFxCopRule: false,
             isDataflowRule: false);
 
         internal static readonly DiagnosticDescriptor WriteRule = DiagnosticDescriptorHelper.Create(
             WriteRuleId,
-            "",
-            "",
+            localizableTitle,
+            s_localizableMessageWrite,
             DiagnosticCategory.Performance,
             RuleLevel.IdeSuggestion,
-            description: "",
+            description: s_localizableDescriptionWrite,
             isPortedFxCopRule: false,
             isDataflowRule: false);
 

@@ -8,3 +8,10 @@ HA1000 | Performance | Info | OverrideReadAndWriteAsyncOnApmStreamAnalyzer
 HA1001 | Performance | Info | OverrideReadAndWriteAsyncOnApmStreamAnalyzer
 HA1839 | Performance | Info | PreferContainsKeyOrValueOverPropertyAccessAnalyzer
 HA1840 | Performance | Info | PreferContainsKeyOrValueOverPropertyAccessAnalyzer
+HA1841 | Performance | Info | PreferSpanArgumentOverSubstringAnalyzer
+HA1843 | Performance | Info | ExtractConstArrayAnalyzerAnalyzer
+UA2052 | Usage | Warning | TaskDelayUseCTOnWaitAnyAnalyzer
+UA2053 | Usage | Info | AllocSmallArraysOnStackAnalyzer
+UA2054 | Usage | Warning | UseThrowIfCancellationRequestedAnalyzer
+UA2250 | Usage | Warning | DetectPLINQNopsAnalyzer
+UA2251 | Usage | Warning | PassCorrectArgumentToBufferClockCopyAnalyzer

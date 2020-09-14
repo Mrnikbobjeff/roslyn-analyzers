@@ -61,6 +61,132 @@ internal class AnalyzerResources {
     }
     
     /// <summary>
+    ///   Looks up a localized string similar to .
+    /// </summary>
+    internal static string AllocSmallArraysOnStackDescription {
+        get {
+            return ResourceManager.GetString("AllocSmallArraysOnStackDescription", resourceCulture);
+        }
+    }
+    
+    /// <summary>
+    ///   Looks up a localized string similar to .
+    /// </summary>
+    internal static string AllocSmallArraysOnStackMessage {
+        get {
+            return ResourceManager.GetString("AllocSmallArraysOnStackMessage", resourceCulture);
+        }
+    }
+    
+    /// <summary>
+    ///   Looks up a localized string similar to .
+    /// </summary>
+    internal static string AllocSmallArraysOnStackTitle {
+        get {
+            return ResourceManager.GetString("AllocSmallArraysOnStackTitle", resourceCulture);
+        }
+    }
+    
+    /// <summary>
+    ///   Looks up a localized string similar to .
+    /// </summary>
+    internal static string DetectPLINQNopsDescription {
+        get {
+            return ResourceManager.GetString("DetectPLINQNopsDescription", resourceCulture);
+        }
+    }
+    
+    /// <summary>
+    ///   Looks up a localized string similar to .
+    /// </summary>
+    internal static string DetectPLINQNopsMessage {
+        get {
+            return ResourceManager.GetString("DetectPLINQNopsMessage", resourceCulture);
+        }
+    }
+    
+    /// <summary>
+    ///   Looks up a localized string similar to .
+    /// </summary>
+    internal static string DetectPLINQNopsTitle {
+        get {
+            return ResourceManager.GetString("DetectPLINQNopsTitle", resourceCulture);
+        }
+    }
+    
+    /// <summary>
+    ///   Looks up a localized string similar to .
+    /// </summary>
+    internal static string ExtractConstArrayDescription {
+        get {
+            return ResourceManager.GetString("ExtractConstArrayDescription", resourceCulture);
+        }
+    }
+    
+    /// <summary>
+    ///   Looks up a localized string similar to .
+    /// </summary>
+    internal static string ExtractConstArrayMessage {
+        get {
+            return ResourceManager.GetString("ExtractConstArrayMessage", resourceCulture);
+        }
+    }
+    
+    /// <summary>
+    ///   Looks up a localized string similar to .
+    /// </summary>
+    internal static string ExtractConstArrayTitle {
+        get {
+            return ResourceManager.GetString("ExtractConstArrayTitle", resourceCulture);
+        }
+    }
+    
+    /// <summary>
+    ///   Looks up a localized string similar to .
+    /// </summary>
+    internal static string OverrideStreamReadAsyncDescription {
+        get {
+            return ResourceManager.GetString("OverrideStreamReadAsyncDescription", resourceCulture);
+        }
+    }
+    
+    /// <summary>
+    ///   Looks up a localized string similar to .
+    /// </summary>
+    internal static string OverrideStreamReadAsyncMessage {
+        get {
+            return ResourceManager.GetString("OverrideStreamReadAsyncMessage", resourceCulture);
+        }
+    }
+    
+    /// <summary>
+    ///   Looks up a localized string similar to .
+    /// </summary>
+    internal static string OverrideStreamReadOrWriteAsyncTitle {
+        get {
+            return ResourceManager.GetString("OverrideStreamReadOrWriteAsyncTitle", resourceCulture);
+        }
+    }
+    
+    /// <summary>
+    ///   Looks up a localized string similar to .
+    /// </summary>
+    internal static string OverrideStreamWriteAsyncDescription {
+        get {
+            return ResourceManager.GetString("OverrideStreamWriteAsyncDescription", resourceCulture);
+        }
+    }
+    
+    /// <summary>
+    ///   Looks up a localized string similar to .
+    /// </summary>
+    internal static string OverrideStreamWriteAsyncMessage {
+        get {
+            return ResourceManager.GetString("OverrideStreamWriteAsyncMessage", resourceCulture);
+        }
+    }
+    
+    /// <summary>
     ///   Looks up a localized string similar to Invocation on Dictionary can be simplified.
     /// </summary>
     internal static string PreferContainsKeyOrValueOverPropertyAccessTitle {
@@ -102,6 +228,87 @@ internal class AnalyzerResources {
     internal static string PreferContainsValueOverPropertyDescription {
         get {
             return ResourceManager.GetString("PreferContainsValueOverPropertyDescription", resourceCulture);
+        }
+    }
+    
+    /// <summary>
+    ///   Looks up a localized string similar to This substring invocation can be replaced with an &apos;AsSpan().Slice()&apos; invocation..
+    /// </summary>
+    internal static string PreferSpanArgumentOverSubstringDescription {
+        get {
+            return ResourceManager.GetString("PreferSpanArgumentOverSubstringDescription", resourceCulture);
+        }
+    }
+    
+    /// <summary>
+    ///   Looks up a localized string similar to Substring invocation &apos;{0}&apos; can be made more efficient.
+    /// </summary>
+    internal static string PreferSpanArgumentOverSubstringMessage {
+        get {
+            return ResourceManager.GetString("PreferSpanArgumentOverSubstringMessage", resourceCulture);
+        }
+    }
+    
+    /// <summary>
+    ///   Looks up a localized string similar to Substring invocation can be made more efficient.
+    /// </summary>
+    internal static string PreferSpanArgumentOverSubstringTitle {
+        get {
+            return ResourceManager.GetString("PreferSpanArgumentOverSubstringTitle", resourceCulture);
+        }
+    }
+    
+    /// <summary>
+    ///   Looks up a localized string similar to .
+    /// </summary>
+    internal static string ProvideCorrectArgumentToEnumHasFlagDescription {
+        get {
+            return ResourceManager.GetString("ProvideCorrectArgumentToEnumHasFlagDescription", resourceCulture);
+        }
+    }
+    
+    /// <summary>
+    ///   Looks up a localized string similar to .
+    /// </summary>
+    internal static string ProvideCorrectArgumentToEnumHasFlagMessageNotFlags {
+        get {
+            return ResourceManager.GetString("ProvideCorrectArgumentToEnumHasFlagMessageNotFlags", resourceCulture);
+        }
+    }
+    
+    /// <summary>
+    ///   Looks up a localized string similar to .
+    /// </summary>
+    internal static string ProvideCorrectArgumentToEnumHasFlagTitle {
+        get {
+            return ResourceManager.GetString("ProvideCorrectArgumentToEnumHasFlagTitle", resourceCulture);
+        }
+    }
+    
+    /// <summary>
+    ///   Looks up a localized string similar to .
+    /// </summary>
+    internal static string TaskDelayUseCancellationTokenInWhenAnyClauseDescription {
+        get {
+            return ResourceManager.GetString("TaskDelayUseCancellationTokenInWhenAnyClauseDescription", resourceCulture);
+        }
+    }
+    
+    /// <summary>
+    ///   Looks up a localized string similar to .
+    /// </summary>
+    internal static string TaskDelayUseCancellationTokenInWhenAnyClauseMessage {
+        get {
+            return ResourceManager.GetString("TaskDelayUseCancellationTokenInWhenAnyClauseMessage", resourceCulture);
+        }
+    }
+    
+    /// <summary>
+    ///   Looks up a localized string similar to .
+    /// </summary>
+    internal static string TaskDelayUseCancellationTokenInWhenAnyClauseTitle {
+        get {
+            return ResourceManager.GetString("TaskDelayUseCancellationTokenInWhenAnyClauseTitle", resourceCulture);
         }
     }
 }

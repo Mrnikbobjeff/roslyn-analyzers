@@ -4,8 +4,10 @@ namespace SecureNet.Category.Performance
 {
     internal sealed class WellKnownTypesEx
     {
+        public const string SystemBuffer = "System.Buffer";
         public const string SystemCollectionsGenericDictionary2 = "System.Collections.Generic.Dictionary`2";
         public const string SystemCollectionsGenericIDictionary2 = "System.Collections.Generic.IDictionary`2";
         public const string SystemCollectionsGenericIReadOnlyDictionary2 = "System.Collections.Generic.IReadOnlyDictionary`2";
+        public const string SystemLinqParallelEnumerable = "System.Linq.ParallelEnumerable";
     }
 }

@@ -27,6 +27,21 @@
         <target state="new">'ContainsValue' does not incur the same overhead as calling the LINQ 'Contains' method on the 'Values' collection.</target>
         <note />
       </trans-unit>
+      <trans-unit id="PreferSpanArgumentOverSubstringDescription">
+        <source>This substring invocation can be replaced with an 'AsSpan().Slice()' invocation.</source>
+        <target state="new">This substring invocation can be replaced with an 'AsSpan().Slice()' invocation.</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="PreferSpanArgumentOverSubstringMessage">
+        <source>Substring invocation '{0}' can be made more efficient</source>
+        <target state="new">Substring invocation '{0}' can be made more efficient</target>
+        <note />
+      </trans-unit>
+      <trans-unit id="PreferSpanArgumentOverSubstringTitle">
+        <source>Substring invocation can be made more efficient</source>
+        <target state="new">Substring invocation can be made more efficient</target>
+        <note />
+      </trans-unit>
     </body>
   </file>
 </xliff>
